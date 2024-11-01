@@ -22,7 +22,7 @@ const App = () => {
         <div>
           <button onClick={manejarCerrarSesion}>Cerrar sesión</button>
           <h1>Biblioteca Digital</h1>
-          <ListaLibros usuarioId={usuario.uid} /> {/* Asegúrate de usar uid aquí */}
+          <ListaLibros usuarioId={usuario.uid} />
           <button onClick={() => setEditando(true)}>Añadir Libro</button>
           {editando && <MiFormulario usuarioId={usuario.uid} alGuardar={() => setEditando(false)} />}
         </div>

@@ -11,7 +11,7 @@
     color: #333;
   }
   
-  /* Container and Layout */
+
   div {
     max-width: 600px;
     margin: 20px auto;
@@ -21,7 +21,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  /* Form Styles */
+
   form {
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
   }
   
-  /* Button Styles */
+
   button {
     padding: 10px 15px;
     background-color: #007bff;
@@ -74,13 +74,13 @@
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
   }
   
-  /* List and Book Styles */
+
   h1, h2, h3 {
     color: #007bff;
     margin-bottom: 15px;
   }
   
-  /* Book Item Styles */
+
   .book-item {
     background-color: #f8f9fa;
     border: 1px solid #e9ecef;
@@ -93,15 +93,7 @@
     margin-bottom: 5px;
   }
   
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    div {
-      width: 95%;
-      padding: 10px;
-    }
-  }
-  
-  /* Authentication Specific Styles */
+
   .auth-toggle {
     text-align: center;
     margin-top: 15px;

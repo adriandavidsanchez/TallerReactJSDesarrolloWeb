@@ -1,33 +1,27 @@
-import { collection, onSnapshot, query, where } from 'firebase/firestore';
+import { collection, onSnapshot } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import MiLibro from './libro';
 
-
-const ListaLibros = ({ usuarioId }) => {
-
-
+const ListaLibros = () => {
   const [libros, setLibros] = useState([]);
 
   useEffect(() => {
-
-
-    const consulta = query(collection(db, 'libros'),
-
-    where('usuarioId', '==', usuarioId));
+    
+    const consulta = collection(db, 'libros');
 
     const cancelarSuscripcion = onSnapshot(consulta, (snapshot) => {
+      const librosArray = snapshot.docs.map((doc) => ({
+        ID: doc.id,
+        ...doc.data(),
+      }));
 
-      const librosArray = snapshot.docs.map((doc) => ({ID: doc.id,...doc.data(),}));
-
+      console.log('Libros encontrados:', librosArray);
       setLibros(librosArray);
-      
-      console.log('Libros actualizados:', librosArray);
     });
-    
-    return () => cancelarSuscripcion();
 
-  }, [usuarioId]);
+    return () => cancelarSuscripcion();
+  }, []);
 
   return (
     <div>
